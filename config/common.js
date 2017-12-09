@@ -1,4 +1,4 @@
-// shared config (dev, qa and prod)
+// shared config (dev and prod)
 const {resolve} = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const ExtractTextPlugin = require("extract-text-webpack-plugin");

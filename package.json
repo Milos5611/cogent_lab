@@ -21,7 +21,7 @@
     "scripts": {
         "dev": "webpack-dev-server --config=config/dev.js --progress --inline --colors",
         "prod": "webpack -p --config=config/prod.js --progress --colors --display-error-details",
-        "postinstall": "npm run prod",
+        "postinstall": "yarn prod",
         "start": "node server.js"
     },
     "dependencies": {
