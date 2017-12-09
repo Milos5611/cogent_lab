@@ -2,20 +2,19 @@
     "name": "cogent",
     "version": "1.0.0",
     "description": "Cogent Lab Test Exam",
+    "author": "Milos Nikolic",
     "main": "app.js",
     "repository": {
         "type": "git",
         "url": "git+ssh://git@github.com/Milos5611/cogent_lab.git"
     },
-    "author": "Milos Nikolic",
     "license": "MIT",
     "bugs": {
         "url": "https://github.com/Milos5611/cogent_lab/issues"
     },
     "homepage": "https://github.com/Milos5611/cogent_lab#readme",
     "jest": {
-        "verbose": true,
-        "testResultsProcessor": "./node_modules/jest-bamboo-formatter"
+        "verbose": true
     },
     "private": true,
     "scripts": {
