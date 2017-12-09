@@ -1,0 +1,74 @@
+{
+    "name": "cogent",
+    "version": "1.0.0",
+    "description": "Cogent Lab Test Exam",
+    "main": "app.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/Milos5611/cogent_lab.git"
+    },
+    "author": "Milos Nikolic",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/Milos5611/cogent_lab/issues"
+    },
+    "homepage": "https://github.com/Milos5611/cogent_lab#readme",
+    "jest": {
+        "verbose": true,
+        "testResultsProcessor": "./node_modules/jest-bamboo-formatter"
+    },
+    "private": true,
+    "dependencies": {
+        "babel-jest": "21.2.0",
+        "domready": "1.0.8",
+        "file-loader": "1.1.5",
+        "jest": "21.2.1",
+        "jest-bamboo-formatter": "1.0.1",
+        "lodash": "4.17.4",
+        "material-ui-next": "npm:material-ui@next",
+        "prop-types": "15.5.10",
+        "react": "16.1.0",
+        "react-dom": "16.1.0",
+        "react-redux": "5.0.6",
+        "react-router-dom": "4.2.2",
+        "redux": "3.7.2",
+        "redux-thunk": "2.2.0",
+        "sinon": "4.1.2",
+        "uuid": "3.1.0"
+    },
+    "devDependencies": {
+        "babel-core": "^6.26.0",
+        "babel-eslint": "^8.0.3",
+        "babel-loader": "^7.1.2",
+        "babel-plugin-transform-class-properties": "6.24.1",
+        "babel-plugin-transform-decorators-legacy": "1.3.4",
+        "babel-plugin-transform-es2015-modules-commonjs": "6.24.1",
+        "babel-plugin-transform-function-bind": "6.22.0",
+        "babel-plugin-transform-object-assign": "6.22.0",
+        "babel-plugin-transform-object-rest-spread": "6.23.0",
+        "babel-polyfill": "6.23.0",
+        "babel-preset-es2015": "6.24.1",
+        "babel-preset-react": "6.24.1",
+        "babel-preset-stage-2": "6.24.1",
+        "css-loader": "0.28.2",
+        "eslint": "3.19.0",
+        "eslint-loader": "1.7.1",
+        "eslint-plugin-react": "7.0.1",
+        "extract-text-webpack-plugin": "^3.0.2",
+        "html-webpack-plugin": "^2.30.1",
+        "node-sass": "4.5.3",
+        "path": "0.12.7",
+        "postcss-cssnext": "^3.0.2",
+        "postcss-import": "10.0.0",
+        "postcss-loader": "2.0.5",
+        "reqwest": "2.0.5",
+        "sass-loader": "^6.0.6",
+        "style-loader": "0.18.1",
+        "transfer-webpack-plugin": "0.1.4",
+        "webpack": "^3.10.0",
+        "webpack-dev-server": "^2.9.7"
+    }
+}
