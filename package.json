@@ -3,9 +3,6 @@
     "version": "1.0.0",
     "description": "Cogent Lab Test Exam",
     "main": "app.js",
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
-    },
     "repository": {
         "type": "git",
         "url": "git+ssh://git@github.com/Milos5611/cogent_lab.git"
@@ -21,6 +18,16 @@
         "testResultsProcessor": "./node_modules/jest-bamboo-formatter"
     },
     "private": true,
+    "engines": {
+        "node": ">=6",
+        "npm": ">=3.8"
+    },
+    "scripts": {
+        "dev": "webpack-dev-server --config webpack.config.js --hot --progress --inline --colors",
+        "build": "webpack -p --config webpack.config.js --progress --colors --display-error-details",
+        "postinstall": "npm run build",
+        "start": "node server.js"
+    },
     "dependencies": {
         "babel-jest": "21.2.0",
         "domready": "1.0.8",
