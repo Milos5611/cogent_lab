@@ -61,8 +61,7 @@ module.exports = {
         ], resolve(__dirname, "../src")),
         new HtmlWebpackPlugin(
             {
-                template: "www/index.ejs",
-                filename: "index.html",
+                template: "www/index.html",
                 inject: true
             })
     ],

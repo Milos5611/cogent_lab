@@ -1,11 +1,14 @@
 // production config
+const {resolve} = require("path");
 const commonConfig = require("./common");
+const merge = require("webpack-merge");
+const webpack = require("webpack");
 
 module.exports = merge(commonConfig, {
-    entry: "./app.js",
+    entry: "../src/app/app.js",
     output: {
         filename: "bundle.[hash].min.js",
-        path: resolve(__dirname, "../../build"),
+        path: resolve(__dirname, "../build"),
         publicPath: "/"
     },
     devtool: "source-map",
