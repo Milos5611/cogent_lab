@@ -59,9 +59,7 @@
         "webpack": "^3.10.0",
         "webpack-dev-server": "^2.9.7",
         "webpack-merge": "^4.1.1",
-        "transfer-webpack-plugin": "0.1.4"
-    },
-    "devDependencies": {
+        "transfer-webpack-plugin": "0.1.4",
         "css-loader": "0.28.2",
         "eslint": "3.19.0",
         "eslint-loader": "1.7.1",
