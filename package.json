@@ -73,6 +73,6 @@
         "postcss-loader": "2.0.5",
         "reqwest": "2.0.5",
         "sass-loader": "^6.0.6",
-        "style-loader": "0.18.1",
+        "style-loader": "0.18.1"
     }
 }
