@@ -1,9 +1,8 @@
 import { applyMiddleware, combineReducers, createStore } from "redux";
-import finder from "../services/finder";
 import thunk from "redux-thunk";
 
 const reducers = {
-    finder
+
 };
 
 const logger = store => next => action => {
