@@ -3,6 +3,8 @@
 @import "style-helpers/path";
 @import "style-helpers/mixins";
 @import "style-helpers/typografy";
+// Restorans
+@import "component/view/restorans/index.scss";
 
 body {
     background: url("/images/greyzz.png") 50% 0;;

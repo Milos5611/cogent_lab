@@ -3,6 +3,7 @@ import * as ROUTES from "../app/common/routes";
 import {Route, Router, Switch} from "react-router-dom";
 import {Provider} from "react-redux";
 import React from "react";
+import Restorans from "./container/Restorans";
 import customHistory from "./common/history";
 import domready from "domready";
 import {render} from "react-dom";
@@ -17,6 +18,7 @@ const MainApplication = () => {
                         <Route
                             exact
                             path={ROUTES.HOME}
+                            component={Restorans}
                         />
                     </Switch>
                 </div>

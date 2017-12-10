@@ -1,15 +1,16 @@
-import { applyMiddleware, combineReducers, createStore } from "redux";
+import {applyMiddleware, combineReducers, createStore} from "redux";
+import restorans from "../services/restorans";
 import thunk from "redux-thunk";
 
 const reducers = {
-
+    restorans
 };
 
 const logger = store => next => action => {
 
     let result = next(action);
 
-    if ( process.env.NODE_ENV !== "production" ) {
+    if (process.env.NODE_ENV !== "production") {
         /* eslint-disable */
         console.group(action.type);
         console.info("Dispatching:", action);

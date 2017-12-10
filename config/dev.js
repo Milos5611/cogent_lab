@@ -7,6 +7,7 @@ module.exports = merge(commonConfig, {
         "react-hot-loader/patch", // activate HMR for React
         "webpack-dev-server/client?http://localhost:8080",
         "webpack/hot/only-dev-server",
+        "babel-polyfill",
         "../src/app/app.js"
     ],
     devServer: {
@@ -19,7 +20,7 @@ module.exports = merge(commonConfig, {
         new webpack.DefinePlugin({
             "window.com.cogent": {
                 NODE_ENV: JSON.stringify("development"),
-                BASE_URL: JSON.stringify("https://api.foursquare.com/v2/venues/explore/")
+                BASE_URL: JSON.stringify("https://api.foursquare.com/v2/venues/")
             }
         })
     ]
