@@ -12,9 +12,8 @@ class RestoranDetail extends Component {
     }
 
     render() {
-        const {restoran} = this.props;
         return (
-
+            <div/>
         );
     }
 }

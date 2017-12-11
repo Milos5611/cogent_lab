@@ -24,6 +24,17 @@ class Rest {
         };
         return reqwest(requestOptions);
     }
+
+    doSearch(link, query) {
+        const url = `${link}?query=${query}&ll=${cogent_address}&client_id=${client_id}&client_secret=${client_secret}&v=${moment()}&radius=1000`;
+        const requestOptions = {
+            url,
+            [TYPE_KEY]: JSON_VALUE,
+            [METHOD_KEY]: GET,
+            [CROSS_ORIGIN_KEY]: process.env.NODE_ENV !== "production"
+        };
+        return reqwest(requestOptions);
+    }
 }
 
 export default new Rest();

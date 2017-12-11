@@ -39,7 +39,7 @@ export default function reducer(state = initialState, action) {
 }
 
 
-// async func, return product list
+// async func, return all restorans near 1km
 export function findRestoransNearBy() {
     return async (dispatch) => {
         try {
@@ -52,6 +52,7 @@ export function findRestoransNearBy() {
     };
 }
 
+// async func, return detail about restoran
 export function restoranDetail(id) {
     return async (dispatch) => {
         try {
@@ -59,6 +60,19 @@ export function restoranDetail(id) {
             // When restoran is ready update state
             dispatch(restoranDataLoadedSuccessful(search_value.response));
             history.push("/restoran");
+        } catch (error) {
+            throw new Error(error);
+        }
+    };
+}
+
+// async func, return filtered result  list
+export function findDataFromQuery(query) {
+    return async (dispatch) => {
+        try {
+            const search_value = await rest.doSearch(`${window.com.cogent.BASE_URL}/search`, query);
+            // When list is ready update state
+            dispatch(dataLoadedSuccessful(search_value.response));
         } catch (error) {
             throw new Error(error);
         }

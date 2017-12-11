@@ -19,49 +19,45 @@ const styles = {
 
 const Restoran = ({restoran, classes, details}) => {
     return (
-        <div className={"wrapper"}>
-            {restoran && restoran.map(r => (
-                <Card
-                    className={"card"}
-                    key={uuid.v4()}
+        <Card
+            className={"card"}
+            key={uuid.v4()}
+        >
+            <CardContent>
+                <Typography
+                    type="headline"
+                    component="h2"
                 >
-                    <CardContent>
-                        <Typography
-                            type="headline"
-                            component="h2"
-                        >
-                            {r.name}
-                        </Typography>
+                    {restoran.name}
+                </Typography>
 
-                        <article>
-                            <Address address={r.location}/>
+                <article>
+                    <Address address={restoran.location}/>
 
-                            <Contact phone={r.contact}/>
+                    <Contact phone={restoran.contact}/>
 
-                            <Category name={r.categories}/>
+                    <Category name={restoran.categories}/>
 
-                            <Distance distance={r.location}/>
-                        </article>
-                    </CardContent>
-                    <CardActions
-                        className={classes.cardAction}
-                    >
-                        <Button
-                            dense
-                            color="primary"
-                            onClick={() => details(r.id)}
-                        >
-                            {"See details"}
-                        </Button>
-                    </CardActions>
-                </Card>
-            ))}
-        </div>
+                    <Distance distance={restoran.location}/>
+                </article>
+            </CardContent>
+            <CardActions
+                className={classes.cardAction}
+            >
+                <Button
+                    dense
+                    color="primary"
+                    onClick={() => details(restoran.id)}
+                >
+                    {"See details"}
+                </Button>
+            </CardActions>
+        </Card>
     );
 };
 
 Restoran.propTypes = {
-    restoran: PropTypes.array,
+    restoran: PropTypes.object.isRequired,
     classes: PropTypes.object.isRequired,
     details: PropTypes.func.isRequired
 };
