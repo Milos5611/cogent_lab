@@ -1,5 +1,9 @@
 import Card, {CardActions, CardContent} from "material-ui/Card";
+import Address from "./Address";
 import Button from "material-ui/Button";
+import Category from "./Category";
+import Contact from "./Contact";
+import Distance from "./Distance";
 import PropTypes from "prop-types";
 import React from "react";
 import Typography from "material-ui/Typography";
@@ -7,18 +11,18 @@ import uuid from "uuid";
 import {withStyles} from "material-ui/styles";
 
 const styles = {
-    card: {
-        width: 345,
-        margin: "0 20px"
+    cardAction: {
+        position: "absolute",
+        bottom: 0
     }
 };
 
-const Restoran = ({restoran, classes}) => {
+const Restoran = ({restoran, classes, details}) => {
     return (
         <div className={"wrapper"}>
             {restoran && restoran.map(r => (
                 <Card
-                    className={classes.card}
+                    className={"card"}
                     key={uuid.v4()}
                 >
                     <CardContent>
@@ -28,22 +32,26 @@ const Restoran = ({restoran, classes}) => {
                         >
                             {r.name}
                         </Typography>
-                        <Typography component="p">
-                            {"Loren Ipsum"}
-                        </Typography>
+
+                        <article>
+                            <Address address={r.location}/>
+
+                            <Contact phone={r.contact}/>
+
+                            <Category name={r.categories}/>
+
+                            <Distance distance={r.location}/>
+                        </article>
                     </CardContent>
-                    <CardActions>
+                    <CardActions
+                        className={classes.cardAction}
+                    >
                         <Button
                             dense
                             color="primary"
+                            onClick={() => details(r.id)}
                         >
-                            {"Share"}
-                        </Button>
-                        <Button
-                            dense
-                            color="primary"
-                        >
-                            {"Learn More"}
+                            {"See details"}
                         </Button>
                     </CardActions>
                 </Card>
@@ -55,6 +63,7 @@ const Restoran = ({restoran, classes}) => {
 Restoran.propTypes = {
     restoran: PropTypes.array,
     classes: PropTypes.object.isRequired,
+    details: PropTypes.func.isRequired
 };
 
 export default withStyles(styles)(Restoran);

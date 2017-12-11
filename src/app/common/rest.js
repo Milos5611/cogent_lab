@@ -14,8 +14,8 @@ const GET = "GET";
 
 class Rest {
 
-    doGet(link) {
-        const url = `${link}?ll=${cogent_address}&client_id=${client_id}&client_secret=${client_secret}&v=${moment()}&radius=1000&limit=5`;
+    doGet(link, id) {
+        const url = `${id ? id : ""}${link}?ll=${cogent_address}&client_id=${client_id}&client_secret=${client_secret}&v=${moment()}&radius=1000`;
         const requestOptions = {
             url,
             [TYPE_KEY]: JSON_VALUE,

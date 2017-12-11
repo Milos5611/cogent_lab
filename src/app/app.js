@@ -1,9 +1,10 @@
 import "./index.scss";
 import * as ROUTES from "../app/common/routes";
 import {Route, Router, Switch} from "react-router-dom";
+import HomePage from "./container/HomePage";
 import {Provider} from "react-redux";
 import React from "react";
-import Restorans from "./container/Restorans";
+import RestoranDetail from "./component/view/details/RestoranDetail";
 import customHistory from "./common/history";
 import domready from "domready";
 import {render} from "react-dom";
@@ -18,7 +19,12 @@ const MainApplication = () => {
                         <Route
                             exact
                             path={ROUTES.HOME}
-                            component={Restorans}
+                            component={HomePage}
+                        />
+                        <Route
+                            exact
+                            path={ROUTES.RESTORAN}
+                            component={RestoranDetail}
                         />
                     </Switch>
                 </div>
