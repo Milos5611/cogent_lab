@@ -54,6 +54,7 @@
         "lodash": "4.17.4",
         "material-ui": "^1.0.0-beta.23",
         "material-ui-icons": "^1.0.0-beta.17",
+        "moment": "^2.19.4",
         "node-sass": "4.5.3",
         "path": "0.12.7",
         "postcss-cssnext": "^3.0.2",
@@ -76,8 +77,5 @@
         "webpack": "^3.10.0",
         "webpack-dev-server": "^2.9.7",
         "webpack-merge": "^4.1.1"
-    },
-    "devDependencies": {
-        "moment": "^2.19.4"
     }
 }
