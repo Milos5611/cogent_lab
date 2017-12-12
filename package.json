@@ -78,6 +78,6 @@
         "webpack-merge": "^4.1.1"
     },
     "devDependencies": {
-        "moment": "^2.19.3"
+        "moment": "^2.19.4"
     }
 }
