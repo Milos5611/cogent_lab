@@ -4,7 +4,7 @@ import {Route, Router, Switch} from "react-router-dom";
 import HomePage from "./container/HomePage";
 import {Provider} from "react-redux";
 import React from "react";
-import RestoranDetail from "./component/view/details/RestoranDetail";
+import RestoranDetail from "./container/RestoranDetail";
 import customHistory from "./common/history";
 import domready from "domready";
 import {render} from "react-dom";

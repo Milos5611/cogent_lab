@@ -8,8 +8,11 @@ import {withStyles} from "material-ui/styles";
 
 const styles = {
     search: {
-        width: "92%",
-        margin: "20px 15px"
+        width: "91.5%",
+        margin: "20px 15px",
+        "@media screen and (max-width: 768px)": {
+            width: "100%"
+        }
     }
 };
 
@@ -17,7 +20,6 @@ class Home extends Component {
 
     static propTypes = {
         findRestoransNearBy: PropTypes.func.isRequired,
-        restoranDetail: PropTypes.func.isRequired,
         findDataFromQuery: PropTypes.func.isRequired,
         restorans: PropTypes.array,
         classes: PropTypes.object.isRequired,
@@ -25,9 +27,9 @@ class Home extends Component {
 
     constructor(props) {
         super(props);
-        // Just in case save query parameter with in component
+        // In case of feature needs keep query parameter
         this.state = {
-            value: props.restorans
+            value: ""
         };
 
         // dispatch find
@@ -42,14 +44,14 @@ class Home extends Component {
     handleQuery = (query) => {
         const value = query.target.value;
 
-        // Keep query wit in state and fire rest call on callback
+        // Keep query with in state and fire rest call on callback
         this.setState({value: value}, () => {
             this.changed(value);
         });
     };
 
     render() {
-        const {restorans, restoranDetail, classes} = this.props;
+        const {restorans, classes} = this.props;
         return (
             <React.Fragment>
                 <div className="office"/>
@@ -70,7 +72,6 @@ class Home extends Component {
                         return (
                             <Restoran
                                 key={uuid.v4()}
-                                details={restoranDetail}
                                 restoran={r}
                             />
                         );

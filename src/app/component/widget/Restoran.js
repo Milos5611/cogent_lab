@@ -1,9 +1,11 @@
+import * as ROUTES from "../../common/routes";
 import Card, {CardActions, CardContent} from "material-ui/Card";
 import Address from "./Address";
 import Button from "material-ui/Button";
 import Category from "./Category";
 import Contact from "./Contact";
 import Distance from "./Distance";
+import {Link} from "react-router-dom";
 import PropTypes from "prop-types";
 import React from "react";
 import Typography from "material-ui/Typography";
@@ -17,7 +19,7 @@ const styles = {
     }
 };
 
-const Restoran = ({restoran, classes, details}) => {
+const Restoran = ({restoran, classes}) => {
     return (
         <Card
             className={"card"}
@@ -44,13 +46,14 @@ const Restoran = ({restoran, classes, details}) => {
             <CardActions
                 className={classes.cardAction}
             >
-                <Button
-                    dense
-                    color="primary"
-                    onClick={() => details(restoran.id)}
-                >
-                    {"See details"}
-                </Button>
+                <Link to={ROUTES.restoranDetail(restoran.id)}>
+                    <Button
+                        dense
+                        color="primary"
+                    >
+                        {"See details"}
+                    </Button>
+                </Link>
             </CardActions>
         </Card>
     );
@@ -58,8 +61,7 @@ const Restoran = ({restoran, classes, details}) => {
 
 Restoran.propTypes = {
     restoran: PropTypes.object.isRequired,
-    classes: PropTypes.object.isRequired,
-    details: PropTypes.func.isRequired
+    classes: PropTypes.object.isRequired
 };
 
 export default withStyles(styles)(Restoran);
