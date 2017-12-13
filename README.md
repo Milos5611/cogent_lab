@@ -45,5 +45,5 @@ On this projct i have used:
 MIT
 
 ## Milos Nikolic, 13.12.2017
- - [https://github.com/Milos5611](GitHub)
+ - [https://github.com/Milos5611/cogent_lab](GitHub)
  - [https://www.linkedin.com/in/nikolicmilos](Linkendin)
