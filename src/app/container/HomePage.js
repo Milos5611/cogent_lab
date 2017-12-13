@@ -1,16 +1,16 @@
-import {RESTORANS, findDataFromQuery, findRestoransNearBy} from "../services/restorans";
+import { RESTORANS, findDataFromQuery, findRestoransNearBy, restoranDetail } from "../services/restorans";
 import HomePage from "../component/view/homePage/HomePage";
-import {bindActionCreators} from "redux";
-import {connect} from "react-redux";
+import { bindActionCreators } from "redux";
+import { connect } from "react-redux";
 
-const mapStateToProps = (state) => {
+const mapStateToProps = ( state ) => {
     return {
-        [RESTORANS]: state.restorans[RESTORANS]
+        [RESTORANS]: state.restorans[ RESTORANS ]
     };
 };
 
-const mapDispatchToProps = (dispatch) => {
-    return bindActionCreators({findDataFromQuery, findRestoransNearBy}, dispatch);
+const mapDispatchToProps = ( dispatch ) => {
+    return bindActionCreators({ findDataFromQuery, findRestoransNearBy, restoranDetail }, dispatch);
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(HomePage);

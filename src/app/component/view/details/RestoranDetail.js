@@ -1,45 +1,86 @@
-import React, {Component} from "react";
-import GoogleMapReact from "google-map-react";
+/* eslint-disable react/jsx-handler-names */
+import { GoogleApiWrapper, InfoWindow, Map, Marker } from "google-maps-react";
+import React, { Component } from "react";
 import PropTypes from "prop-types";
 
-class RestoranDetail extends Component {
+export class RestoranDetail extends Component {
 
     static propTypes = {
         restoran: PropTypes.object,
-        match: PropTypes.object.isRequired,
-        restoranDetail: PropTypes.func.isRequired
+        google: PropTypes.object
     };
 
-    static defaultProps = {
-        center: {lat: 59.95, lng: 30.33},
-        zoom: 11
-    };
-
-    constructor(props) {
+    constructor( props ) {
         super(props);
+        this.state = {
+            showingInfoWindow: false,
+            activeMarker: {},
+            selectedPlace: {},
+        };
+
+        // binding this to event-handler functions
+        this.onMarkerClick = ::this.onMarkerClick;
+        this.onMapClicked = ::this.onMapClicked;
+        this.onInfoWindowClose = ::this.onInfoWindowClose;
     }
 
-    componentDidMount() {
-        let restoranId = this.props.match.params.id;
-        this.props.restoranDetail(restoranId);
+    onMarkerClick = ( props, marker ) => {
+        this.setState({
+            selectedPlace: props,
+            activeMarker: marker,
+            showingInfoWindow: true
+        });
+    };
+
+    onMapClicked = () => {
+        if ( this.state.showingInfoWindow ) {
+            this.setState({
+                showingInfoWindow: false,
+                activeMarker: null
+            });
+        }
+    };
+
+    onInfoWindowClose() {
+        this.setState({
+            showingInfoWindow: false,
+            activeMarker: null
+        });
     }
 
     render() {
+        const { restoran } = this.props;
         return (
-            <GoogleMapReact
-                defaultCenter={this.props.center}
-                defaultZoom={this.props.zoom}
+            <Map
+                google={this.props.google}
+                zoom={18}
+                onClick={this.onMapClicked}
+                initialCenter={{ lat: 35.649065, lng: 139.702237 }}
             >
-                <AnyReactComponent
-                    lat={59.955413}
-                    lng={30.337844}
-                    text={"Kreyser Avrora"}
+                <Marker
+                    onClick={this.onMarkerClick}
+                    name={restoran && restoran.name}
+                    position={{ lat: restoran && restoran.location.lat, lng: restoran && restoran.location.lng }}
                 />
-            </GoogleMapReact>
+                <Marker
+                    onClick={this.onMarkerClick}
+                    name={"CogentLab"}
+                />
+
+                <InfoWindow
+                    marker={this.state.activeMarker}
+                    visible={this.state.showingInfoWindow}
+                    onClose={this.onInfoWindowClose}
+                >
+                    <div>
+                        <h1>{this.state.selectedPlace.name}</h1>
+                    </div>
+                </InfoWindow>
+            </Map>
         );
     }
 }
 
-const AnyReactComponent = ({text}) => <div>{text}</div>;
-
-export default RestoranDetail;
+export default GoogleApiWrapper({
+    apiKey: "AIzaSyAyesbQMyKVVbBgKVi2g6VX7mop2z96jBo"
+})(RestoranDetail);

@@ -1,10 +1,10 @@
-import React, {Component} from "react";
+import React, { Component } from "react";
 import PropTypes from "prop-types";
 import Restoran from "../../widget/Restoran";
 import TextField from "material-ui/TextField";
 import debounce from "lodash/debounce";
 import uuid from "uuid";
-import {withStyles} from "material-ui/styles";
+import { withStyles } from "material-ui/styles";
 
 const styles = {
     search: {
@@ -21,11 +21,12 @@ class Home extends Component {
     static propTypes = {
         findRestoransNearBy: PropTypes.func.isRequired,
         findDataFromQuery: PropTypes.func.isRequired,
+        restoranDetail: PropTypes.func.isRequired,
         restorans: PropTypes.array,
         classes: PropTypes.object.isRequired,
     };
 
-    constructor(props) {
+    constructor( props ) {
         super(props);
         // In case of feature needs keep query parameter
         this.state = {
@@ -37,21 +38,21 @@ class Home extends Component {
     }
 
     componentDidMount() {
-        const {findRestoransNearBy} = this.props;
+        const { findRestoransNearBy } = this.props;
         findRestoransNearBy();
     }
 
-    handleQuery = (query) => {
+    handleQuery = ( query ) => {
         const value = query.target.value;
 
         // Keep query with in state and fire rest call on callback
-        this.setState({value: value}, () => {
+        this.setState({ value: value }, () => {
             this.changed(value);
         });
     };
 
     render() {
-        const {restorans, classes} = this.props;
+        const { restorans, restoranDetail, classes } = this.props;
         return (
             <React.Fragment>
                 <div className="office"/>
@@ -60,19 +61,20 @@ class Home extends Component {
                     <TextField
                         className={classes.search}
                         id="search"
-                        label="Search restoran"
+                        label="Search for your favorite restoran"
                         placeholder="Type something"
                         type="search"
                         autoFocus
                         fullWidth
-                        onKeyDown={(query) => this.handleQuery(query)}
+                        onKeyDown={( query ) => this.handleQuery(query)}
                     />
 
-                    {restorans && restorans.map(r => {
+                    {restorans && restorans.map(restoran => {
                         return (
                             <Restoran
                                 key={uuid.v4()}
-                                restoran={r}
+                                restoran={restoran}
+                                details={restoranDetail}
                             />
                         );
                     })}
