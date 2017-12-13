@@ -42,7 +42,7 @@ On this projct i have used:
  
 ## License
 
-A short snippet describing the license (MIT, Apache, etc.)
+MIT
 
 ## Milos Nikolic, 13.12.2017
  - [https://github.com/Milos5611](GitHub)
