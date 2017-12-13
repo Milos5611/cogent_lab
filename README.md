@@ -8,7 +8,7 @@ To run project hit `yarn start` from your console, then open your browser and go
 
 ## Problem to solve
 
-App is hosted on [https://tokyofoodservice.herokuapp.com]() using heroku BUT, heroku and Foursquare are playing ping-pong with error i get.
+App is hosted on [https://tokyofoodservice.herokuapp.com] using heroku BUT, heroku and Foursquare are playing ping-pong with error i get.
 I am sorry for that, you can try to reach app but i doubt that they will solve it until you look on it.
 Here is my open bug, still wait for response from their side [https://help.heroku.com/sharing/e852722d-44cd-4e85-82b1-8729b7d5b717]() 
 
