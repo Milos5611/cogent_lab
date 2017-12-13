@@ -30,7 +30,7 @@ On this projct i have used:
  - Material-UI -> V 1-beta
  - google-maps-react -> for presenting map view
  
-## Other thing
+## Architecture
 
 - Environment configuration is in `config` folder
 
@@ -45,4 +45,6 @@ On this projct i have used:
 
 A short snippet describing the license (MIT, Apache, etc.)
 
-## Milos Nikolic, 13.12.2017 ##
+## Milos Nikolic, 13.12.2017
+ - [https://github.com/Milos5611](GitHub)
+ - [https://www.linkedin.com/in/nikolicmilos](Linkendin)
