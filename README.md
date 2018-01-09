@@ -4,7 +4,7 @@ To install / unpack application run `yarn`
 
 ## PROJECT
 
-To run project hit `yarn start` from your console, then open your browser and go to `localhost:8080`
+To run project hit `yarn dev` from your console, then open your browser and go to `localhost:8080`
 
 ## Problem to solve
 

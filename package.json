@@ -19,7 +19,7 @@
     "private": true,
     "scripts": {
         "dev": "webpack-dev-server --config=config/dev.js --progress --inline --colors",
-        "prod": "webpack -p --config=config/prod.js --progress --colors --display-error-details",
+        "prod": "webpack --config=config/prod.js --progress --colors --display-error-details",
         "start": "yarn prod && node server.js"
     },
     "dependencies": {
