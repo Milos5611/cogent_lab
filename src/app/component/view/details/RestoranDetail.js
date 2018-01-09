@@ -55,7 +55,7 @@ export class RestoranDetail extends Component {
                 google={this.props.google}
                 zoom={18}
                 onClick={this.onMapClicked}
-                initialCenter={{ lat: 35.649065, lng: 139.702237 }}
+                initialCenter={{ lat: 44.816368, lng: 20.437072 }}
             >
                 <Marker
                     onClick={this.onMarkerClick}
@@ -64,7 +64,7 @@ export class RestoranDetail extends Component {
                 />
                 <Marker
                     onClick={this.onMarkerClick}
-                    name={"CogentLab"}
+                    name={"PRODYNA D.O.O"}
                 />
 
                 <InfoWindow

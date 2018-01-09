@@ -2,7 +2,7 @@ import reqwest from "reqwest";
 
 const client_id = "USWHH1RRQBNF4JGMMA0J2OTG3QRFFHH0QZBETTM4MQGOUXZ5";
 const client_secret = "CQMZTIOMZU2IYCHXN0OFSNDBHWLWM4ALFQGYK3EFK3WPEDOD";
-const cogent_address = "35.649065, 139.702237";
+const cogent_address = "44.817801, 20.436718";
 
 const CROSS_ORIGIN_KEY = "crossOrigin";
 const METHOD_KEY = "method";
@@ -11,7 +11,7 @@ const TYPE_KEY = "type";
 const JSON_VALUE = "json";
 const GET = "GET";
 
-const curent_date = new Date().toLocaleDateString().split("/").reverse().join("");
+const curent_date = new Date().toISOString().substring(0, 10).split("-").join("");
 
 class Rest {
 
