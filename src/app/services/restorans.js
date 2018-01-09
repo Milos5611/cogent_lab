@@ -42,7 +42,7 @@ export default function reducer( state = initialState, action ) {
 export function findRestoransNearBy() {
     return async ( dispatch ) => {
         try {
-            const search_value = await rest.doGet(`${window.com.cogent.BASE_URL}/search`);
+            const search_value = await rest.doGet(`${window.com.prodyna.BASE_URL}/search`);
             // When list is ready update state
             dispatch(dataLoadedSuccessful(search_value.response));
         } catch ( error ) {
@@ -55,7 +55,7 @@ export function findRestoransNearBy() {
 export function restoranDetail( id ) {
     return async ( dispatch ) => {
         try {
-            const search_value = await rest.doGet(`${window.com.cogent.BASE_URL}/${id}`);
+            const search_value = await rest.doGet(`${window.com.prodyna.BASE_URL}/${id}`);
             // When restoran is ready update state
             dispatch(restoranDataLoadedSuccessful(search_value.response));
             history.push("/restoran/detail");
@@ -69,7 +69,7 @@ export function restoranDetail( id ) {
 export function findDataFromQuery( query ) {
     return async ( dispatch ) => {
         try {
-            const search_value = await rest.doSearch(`${window.com.cogent.BASE_URL}/search`, query);
+            const search_value = await rest.doSearch(`${window.com.prodyna.BASE_URL}/search`, query);
             // When list is ready update state
             dispatch(dataLoadedSuccessful(search_value.response));
         } catch ( error ) {

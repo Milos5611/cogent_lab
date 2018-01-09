@@ -8,11 +8,7 @@ To run project hit `yarn dev` from your console, then open your browser and go t
 
 ## Problem to solve
 
-App is hosted on https://tokyofoodservice.herokuapp.com using heroku BUT, heroku and Foursquare are playing ping-pong with error i get.
-I am sorry for that, you can try to reach app but i doubt that they will solve it until you look on it.
-Here is my open bug, still wait for response from their side https://help.heroku.com/sharing/e852722d-44cd-4e85-82b1-8729b7d5b717 
-
-This project was based on assumption that user would like to order food and have easy to see app for near buy market.
+This project was based on assumption that user would like to see near buy market.
 App utilize: search by keyword user type, random selection and map view of particular restoran.
 
 Implemented is delay for typing in case of user type fast so not waist to much HTTP request.

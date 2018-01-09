@@ -17,7 +17,7 @@ module.exports = merge(commonConfig, {
     devtool: "source-map",
     plugins: [
         new webpack.DefinePlugin({
-            "window.com.cogent": {
+            "window.com.prodyna": {
                 NODE_ENV: JSON.stringify("production"),
                 BASE_URL: JSON.stringify("https://api.foursquare.com/v2/venues")
             }

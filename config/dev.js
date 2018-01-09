@@ -18,7 +18,7 @@ module.exports = merge(commonConfig, {
         new webpack.HotModuleReplacementPlugin(), // enable HMR globally
         new webpack.NamedModulesPlugin(), // prints more readable module names in the browser console on HMR updates,
         new webpack.DefinePlugin({
-            "window.com.cogent": {
+            "window.com.prodyna": {
                 NODE_ENV: JSON.stringify("development"),
                 BASE_URL: JSON.stringify("https://api.foursquare.com/v2/venues")
             }
