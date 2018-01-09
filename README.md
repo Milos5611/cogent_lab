@@ -14,9 +14,6 @@ App utilize: search by keyword user type, random selection and map view of parti
 Implemented is delay for typing in case of user type fast so not waist to much HTTP request.
 Delay function will fire every 200ms in case nothing is entered.  
 
-__TEST__ is missing due problem to solve with heroku and not enough time to write some :(
-
-
 ## Library used
 
 On this projct i have used:
